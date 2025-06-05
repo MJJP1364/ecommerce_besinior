@@ -1,4 +1,5 @@
-import 'package:ecommerce_besinior/features/feature_intro/presentation/splash_screen.dart';
+import 'package:ecommerce_besinior/core/dependency/dependences.dart';
+import 'package:ecommerce_besinior/features/feature_intro/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Eccomerce Besinior',
       theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
-      home: const SplashScreen(),
+      initialBinding: AllBindings(),
+      // initialRoute: AppRoutes.splash,
+      home: SplashScreen(),
     );
   }
 }

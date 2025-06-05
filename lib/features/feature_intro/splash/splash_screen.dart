@@ -1,27 +1,13 @@
 import 'package:delayed_widget/delayed_widget.dart';
-import 'package:ecommerce_besinior/commons/utils/customSnackBar.dart';
+import 'package:ecommerce_besinior/features/feature_intro/splash/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
+import 'package:get/get.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashScreen extends StatelessWidget {
+  SplashScreen({super.key});
 
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    goToHome();
-  }
-
-  Future<void> goToHome() async {
-    await Future.delayed(const Duration(seconds: 3));
-
-    CustomSnackBar.show('خطا', 'به اینترنت متصل نیستید');
-  }
+  final SplashController splashController = Get.put(SplashController());
 
   @override
   Widget build(BuildContext context) {
