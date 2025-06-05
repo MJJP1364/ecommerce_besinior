@@ -11,6 +11,10 @@ class SplashController extends GetxController {
   Future<void> goToHome() async {
     await Future.delayed(const Duration(seconds: 3));
 
-    CustomSnackBar.show(title: 'خطا', message: 'به اینترنت متتصل نیستید');
+    CustomSnackBar.show(
+      title: 'خطا',
+      message: 'به اینترنت متتصل نیستید',
+      // data: null, // Replace null with appropriate data if needed
+    );
   }
 }
