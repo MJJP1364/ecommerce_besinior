@@ -1,27 +1,13 @@
 import 'package:delayed_widget/delayed_widget.dart';
-import 'package:ecommerce_besinior/commons/utils/customSnackBar.dart';
+import 'package:ecommerce_besinior/features/Pages/splash/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
+import 'package:get/get.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashScreen extends StatelessWidget {
+  SplashScreen({super.key});
 
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    goToHome();
-  }
-
-  Future<void> goToHome() async {
-    await Future.delayed(const Duration(seconds: 3));
-
-    CustomSnackBar.show('خطا', 'به اینترنت متصل نیستید');
-  }
+  final SplashController splashController = Get.put(SplashController());
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
+            Center(
               child: DelayedWidget(
                 delayDuration: const Duration(milliseconds: 1000),
                 animationDuration: Duration(milliseconds: 1000),
@@ -48,16 +34,25 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
             ),
-
-            // const Text(
-            //   'به اینترنت متصل نیستید',
-            //   style: TextStyle(
-            //     fontSize: 25,
-            //     fontWeight: FontWeight.bold,
-            //     color: Colors.red,
-            //   ),
-            // ),
-            // SizedBox(height: size.height * 0.05),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 10,
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onPressed: () {
+                splashController.checkConnectivity1();
+              },
+              child: const Text(
+                'ورود به برنامه',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
           ],
         ),
       ),
