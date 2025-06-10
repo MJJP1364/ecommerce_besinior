@@ -1,28 +1,12 @@
 import 'package:delayed_widget/delayed_widget.dart';
 import 'package:ecommerce_besinior/features/Pages/HomePage/home_controller.dart';
 import 'package:ecommerce_besinior/features/Pages/HomePage/widgets/get_start_btn.dart';
-import 'package:ecommerce_besinior/features/Pages/HomePage/widgets/intro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final HomeController homeController = Get.find();
-
-  final List<Widget> introPages = [
-    IntroPage(
-      title: 'Welcome to Besinior',
-      description: 'Discover the best products at unbeatable prices.',
-    ),
-    IntroPage(
-      title: 'Exclusive Offers',
-      description: 'Get access to exclusive deals and discounts.',
-    ),
-    IntroPage(
-      title: 'Fast Delivery',
-      description: 'Enjoy fast and reliable delivery to your doorstep.',
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -57,10 +41,10 @@ class HomeScreen extends StatelessWidget {
               width: width,
               height: height * 0.25,
               child: PageView.builder(
-                itemCount: introPages.length,
+                itemCount: homeController.introPages.length,
                 controller: homeController.pageController,
                 itemBuilder: (context, index) {
-                  return introPages[index];
+                  return homeController.introPages[index];
                 },
               ),
             ),
@@ -77,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                 text: 'Next',
                 onPressed: () {
                   if (homeController.pageController.page!.toInt() <
-                      introPages.length - 1) {
+                      homeController.introPages.length - 1) {
                     homeController.pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeIn,
