@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
 
-  // final SplashController splashController = Get.put(SplashController());
   final SplashController splashController = Get.find();
 
   @override
@@ -29,29 +28,36 @@ class SplashScreen extends StatelessWidget {
                 animationDuration: Duration(milliseconds: 1000),
                 animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
 
-                child: SvgPicture.asset(
-                  'assets/images/splash_logo.svg',
-                  width: size.width * 0.8,
+                child: Column(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/splash_logo.svg',
+                      width: size.width * 0.8,
+                    ),
+                    const SizedBox(height: 30),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 10,
+                        backgroundColor: Colors.red,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () {
+                        splashController.checkConnectivity1();
+                      },
+                      child: const Text(
+                        'ورود به برنامه',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 10,
-                backgroundColor: Colors.red,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              onPressed: () {
-                splashController.checkConnectivity1();
-              },
-              child: const Text(
-                'ورود به برنامه',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
           ],
