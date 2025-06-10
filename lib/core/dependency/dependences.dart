@@ -6,6 +6,6 @@ class AllBindings implements Bindings {
   @override
   void dependencies() {
     // Get.lazyPut<SplashController>(() => SplashController(), fenix: true);
-    Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
+    Get.lazyPut<HomeController>(() => HomeController( ), fenix: true);
   }
 }
