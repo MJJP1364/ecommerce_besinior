@@ -1,5 +1,5 @@
 import 'package:ecommerce_besinior/core/dependency/dependences.dart';
-import 'package:ecommerce_besinior/features/feature_intro/splash/splash_screen.dart';
+import 'package:ecommerce_besinior/features/Pages/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

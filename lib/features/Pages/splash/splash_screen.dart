@@ -1,5 +1,5 @@
 import 'package:delayed_widget/delayed_widget.dart';
-import 'package:ecommerce_besinior/features/feature_intro/splash/controller.dart';
+import 'package:ecommerce_besinior/features/Pages/splash/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart' show SvgPicture;
 import 'package:get/get.dart';
