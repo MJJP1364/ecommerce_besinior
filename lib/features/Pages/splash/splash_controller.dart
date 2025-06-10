@@ -16,8 +16,6 @@ class SplashController extends GetxController {
   }
 
   Future<void> checkConnectivity1() async {
-
-
     var connectivityResult = await Connectivity().checkConnectivity();
     if (connectivityResult.contains(ConnectivityResult.mobile)) {
       // Mobile network is available
