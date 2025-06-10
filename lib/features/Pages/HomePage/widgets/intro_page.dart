@@ -8,6 +8,7 @@ class IntroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
@@ -17,10 +18,7 @@ class IntroPage extends StatelessWidget {
             delayDuration: const Duration(milliseconds: 300),
             animationDuration: const Duration(milliseconds: 1000),
             animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
-            child: Text(
-              title,
-              style: const TextStyle(fontSize: 23, color: Colors.black),
-            ),
+            child: Text(title, style: textTheme.titleMedium),
           ),
           const SizedBox(height: 10),
           DelayedWidget(
@@ -29,7 +27,7 @@ class IntroPage extends StatelessWidget {
             animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
             child: Text(
               description,
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
+              style: textTheme.bodyMedium?.copyWith(color: Colors.black54),
             ),
           ),
         ],

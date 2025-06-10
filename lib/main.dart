@@ -1,3 +1,5 @@
+import 'package:ecommerce_besinior/config/Themes/my_theme.dart';
+import 'package:ecommerce_besinior/config/Themes/theme_Controller.dart';
 import 'package:ecommerce_besinior/core/dependency/dependences.dart';
 import 'package:ecommerce_besinior/features/Pages/splash/splash_controller.dart';
 import 'package:ecommerce_besinior/features/Pages/splash/splash_screen.dart';
@@ -5,9 +7,11 @@ import 'package:ecommerce_besinior/routhed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -26,9 +30,15 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Eccomerce Besinior',
-      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       initialBinding: AllBindings(),
-      // initialRoute: AppRoutes.splash,
+
+      // Theme settings
+      themeMode: ThemeController().theme,
+      theme: MyThemes.lightTheme,
+      darkTheme: MyThemes.darkTheme,
+
+
+       // initialRoute: AppRoutes.splash,
       getPages: routes,
       home: SplashScreen(),
 

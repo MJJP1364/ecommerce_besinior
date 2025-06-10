@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       // appBar: AppBar(
       //   centerTitle: true,
@@ -81,10 +82,11 @@ class HomeScreen extends StatelessWidget {
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeIn,
                     );
-                  } else {
-                    // Navigate to the next screen or perform an action
-                    Get.toNamed('/nextScreen'); // Replace with your route
                   }
+                  //  else {
+                  //   // Navigate to the next screen or perform an action
+                  //   Get.toNamed('/nextScreen'); // Replace with your route
+                  // }
                 },
               ),
             ),
