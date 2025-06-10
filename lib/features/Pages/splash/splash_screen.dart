@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
+            Center(
               child: DelayedWidget(
                 delayDuration: const Duration(milliseconds: 1000),
                 animationDuration: Duration(milliseconds: 1000),
@@ -34,16 +34,25 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-            // const Text(
-            //   'به اینترنت متصل نیستید',
-            //   style: TextStyle(
-            //     fontSize: 25,
-            //     fontWeight: FontWeight.bold,
-            //     color: Colors.red,
-            //   ),
-            // ),
-            // SizedBox(height: size.height * 0.05),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 10,
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onPressed: () {
+                splashController.checkConnectivity1();
+              },
+              child: const Text(
+                'ورود به برنامه',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
           ],
         ),
       ),
