@@ -1,7 +1,5 @@
 import 'dart:io';
 import 'package:ecommerce_besinior/commons/utils/customSnackBar.dart';
-import 'package:ecommerce_besinior/features/Pages/HomePage/home_view.dart';
-import 'package:ecommerce_besinior/core/dependency/dependences.dart';
 import 'package:get/get.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
@@ -12,7 +10,6 @@ class SplashController extends GetxController {
   onInit() {
     super.onInit();
     checkConnectivity1();
-
   }
 
   Future<void> checkConnectivity1() async {
@@ -44,12 +41,7 @@ class SplashController extends GetxController {
         final result = await InternetAddress.lookup('example.com');
         if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
           //Internet connection is available
-          Get.offAll(
-            () => HomeScreen(),
-            transition: Transition.fadeIn,
-            duration: const Duration(milliseconds: 500),
-            binding: AllBindings(),
-          );
+          Get.offAllNamed('/home');
         }
       }
 

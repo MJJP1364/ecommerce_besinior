@@ -20,7 +20,6 @@ class CustomSnackBar {
         style: const TextStyle(fontSize: 18),
         textAlign: TextAlign.center,
       ),
-
       icon: Padding(
         padding: const EdgeInsets.only(left: 15),
         child: const Icon(Icons.error, color: Colors.red, size: 40),

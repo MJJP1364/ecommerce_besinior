@@ -1,5 +1,7 @@
 import 'package:ecommerce_besinior/core/dependency/dependences.dart';
+import 'package:ecommerce_besinior/features/Pages/splash/splash_controller.dart';
 import 'package:ecommerce_besinior/features/Pages/splash/splash_screen.dart';
+import 'package:ecommerce_besinior/routhed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -11,10 +13,9 @@ void main() async {
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.dark,
   );
-
   runApp(const MyApp());
 
-  
+  Get.put(SplashController(), permanent: true);
 }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +29,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       initialBinding: AllBindings(),
       // initialRoute: AppRoutes.splash,
+      getPages: routes,
       home: SplashScreen(),
+
+      // home: ,
     );
   }
 }
