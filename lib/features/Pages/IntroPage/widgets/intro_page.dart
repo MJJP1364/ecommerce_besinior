@@ -32,7 +32,7 @@ class IntroPage extends StatelessWidget {
               child: DelayedWidget(
                 delayDuration: const Duration(milliseconds: 300),
                 animationDuration: const Duration(milliseconds: 1000),
-                animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
+                animation: DelayedAnimations.SLIDE_FROM_TOP,
 
                 child: Image.asset(image, fit: BoxFit.contain),
               ),
