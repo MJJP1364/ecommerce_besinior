@@ -54,9 +54,8 @@ class PrefsOperators {
   }
 
   Future<void> logout() async {
-    await sharedPreferences.remove('token');
-    await sharedPreferences.remove('userName');
-    await sharedPreferences.remove('email');
-    await sharedPreferences.setBool('isLoggedIn', false);
+    sharedPreferences.clear();
+
+    sharedPreferences.setBool('showIntro', true);
   }
 }
