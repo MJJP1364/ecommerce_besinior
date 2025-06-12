@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 class IntroController extends GetxController {
   final PageController pageController = PageController();
+
   final currentPage = 0.obs;
 
   final List<Widget> introPages = [

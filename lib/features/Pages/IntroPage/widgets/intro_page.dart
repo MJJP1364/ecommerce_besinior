@@ -42,7 +42,7 @@ class IntroPage extends StatelessWidget {
 
         // Content
         Positioned(
-          bottom: size.height * 0.2,
+          bottom: size.height * 0.15,
           child: SizedBox(
             width: size.width,
             child: Column(

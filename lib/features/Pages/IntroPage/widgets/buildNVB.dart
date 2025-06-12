@@ -1,6 +1,8 @@
 import 'package:delayed_widget/delayed_widget.dart';
+import 'package:ecommerce_besinior/core/prefs_operators.dart';
 import 'package:ecommerce_besinior/features/Pages/IntroPage/intro_controller.dart';
 import 'package:ecommerce_besinior/features/Pages/IntroPage/widgets/get_start_btn.dart';
+import 'package:ecommerce_besinior/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -49,6 +51,9 @@ Widget BuildNavigationControls(Size size, IntroController introController) {
                 text: isLastPage ? 'Get Started' : 'Next',
                 onPressed: () {
                   if (isLastPage) {
+                    final PrefsOperators prefsOperators =
+                        locator<PrefsOperators>();
+                    prefsOperators.changeIntroState();
                     Get.offAllNamed('/home');
                   } else {
                     introController.pageController.nextPage(

@@ -1,4 +1,4 @@
-import 'package:ecommerce_besinior/core/dependency/dependences.dart';
+import 'package:ecommerce_besinior/core/dependences.dart';
 import 'package:ecommerce_besinior/features/Pages/Home/home_view.dart';
 import 'package:ecommerce_besinior/features/Pages/IntroPage/intro_view.dart';
 import 'package:get/get.dart';
