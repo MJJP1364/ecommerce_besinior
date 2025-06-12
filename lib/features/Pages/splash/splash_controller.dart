@@ -41,7 +41,7 @@ class SplashController extends GetxController {
         final result = await InternetAddress.lookup('example.com');
         if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
           //Internet connection is available
-          Get.offAllNamed('/home');
+          Get.offAllNamed('intro');
         }
       }
 
