@@ -1,10 +1,15 @@
 import 'package:delayed_widget/delayed_widget.dart';
+import 'package:ecommerce_besinior/core/prefs_operators.dart';
+import 'package:ecommerce_besinior/features/Pages/IntroPage/intro_controller.dart';
 import 'package:ecommerce_besinior/features/Pages/IntroPage/widgets/get_start_btn.dart';
+import 'package:ecommerce_besinior/locator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+// فرض می‌کنیم IntroController کلاسی هست که currentPage رو بصورت RxInt ذخیره می‌کنه
 // ignore: non_constant_identifier_names
-Widget BuildNavigationControls(Size size, dynamic introController) {
+Widget BuildNavigationControls(Size size, IntroController introController) {
   return Positioned(
     bottom: size.height * 0.07,
     left: 0,
@@ -37,21 +42,28 @@ Widget BuildNavigationControls(Size size, dynamic introController) {
             delayDuration: const Duration(milliseconds: 500),
             animationDuration: const Duration(milliseconds: 1000),
             animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
-            child: GetStartBtn(
-              text: 'Next',
-              onPressed: () {
-                if (introController.pageController.page!.toInt() <
-                    introController.introPages.length - 1) {
-                  introController.pageController.nextPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeIn,
-                  );
-                } else {
-                  // Navigate to next screen
-                  // Get.toNamed('/home'); // Uncomment when route is ready
-                }
-              },
-            ),
+            child: Obx(() {
+              final isLastPage =
+                  introController.currentPage >=
+                  introController.introPages.length - 1;
+
+              return GetStartBtn(
+                text: isLastPage ? 'Get Started' : 'Next',
+                onPressed: () {
+                  if (isLastPage) {
+                    final PrefsOperators prefsOperators =
+                        locator<PrefsOperators>();
+                    prefsOperators.changeIntroState();
+                    Get.offAllNamed('/bottonNavBar');
+                  } else {
+                    introController.pageController.nextPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  }
+                },
+              );
+            }),
           ),
         ],
       ),

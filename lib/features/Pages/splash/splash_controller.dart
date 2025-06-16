@@ -1,9 +1,13 @@
 import 'dart:io';
+
 import 'package:ecommerce_besinior/commons/utils/customSnackBar.dart';
+import 'package:ecommerce_besinior/core/prefs_operators.dart';
+import 'package:ecommerce_besinior/locator.dart';
 import 'package:get/get.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 class SplashController extends GetxController {
+  PrefsOperators prefsOperators = locator<PrefsOperators>();
   RxBool connectivity = false.obs;
 
   @override
@@ -36,12 +40,20 @@ class SplashController extends GetxController {
   Future<void> checkInternetConnection() async {
     // Simulate a network check
     await Future.delayed(const Duration(seconds: 3));
+
     try {
       if (connectivity.value) {
         final result = await InternetAddress.lookup('example.com');
         if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
           //Internet connection is available
-          Get.offAllNamed('/home');
+          // Get.offAllNamed('/intro');
+          final PrefsOperators prefsOperators = locator<PrefsOperators>();
+          var shouldShowIntro = await prefsOperators.getIntroState();
+          if (shouldShowIntro) {
+            Get.offAllNamed('/intro');
+          } else {
+            Get.offAllNamed('/bottonNavBar');
+          }
         }
       }
 

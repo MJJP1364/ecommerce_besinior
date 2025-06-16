@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 class IntroController extends GetxController {
   final PageController pageController = PageController();
 
+  final currentPage = 0.obs;
+
   final List<Widget> introPages = [
     IntroPage(
       title: 'Welcome to Besinior',
@@ -22,4 +24,18 @@ class IntroController extends GetxController {
       image: 'assets/images/fiat.png',
     ),
   ];
+
+  @override
+  void onInit() {
+    super.onInit();
+    pageController.addListener(() {
+      currentPage.value = pageController.page?.toInt() ?? 0;
+    });
+  }
+
+  @override
+  void onClose() {
+    pageController.dispose();
+    super.onClose();
+  }
 }

@@ -1,8 +1,9 @@
 import 'package:ecommerce_besinior/config/Themes/my_theme.dart';
 import 'package:ecommerce_besinior/config/Themes/theme_Controller.dart';
-import 'package:ecommerce_besinior/core/dependency/dependences.dart';
+import 'package:ecommerce_besinior/core/dependences.dart';
 import 'package:ecommerce_besinior/features/Pages/splash/splash_controller.dart';
 import 'package:ecommerce_besinior/features/Pages/splash/splash_screen.dart';
+import 'package:ecommerce_besinior/locator.dart';
 import 'package:ecommerce_besinior/routhed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initLocator(); // Initialize the service locator
   await GetStorage.init();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   const SystemUiOverlayStyle(
