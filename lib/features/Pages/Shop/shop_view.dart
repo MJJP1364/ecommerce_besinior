@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ShopScreen extends StatelessWidget {
+  const ShopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home'), centerTitle: true),
+      appBar: AppBar(title: const Text('Shop'), centerTitle: true),
       body: Center(
         child: Text(
-          'Welcome to the Home Page',
+          'Welcome to the Shop Page',
           style: Theme.of(context).textTheme.bodySmall,
         ),
       ),

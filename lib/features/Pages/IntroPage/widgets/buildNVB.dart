@@ -54,7 +54,7 @@ Widget BuildNavigationControls(Size size, IntroController introController) {
                     final PrefsOperators prefsOperators =
                         locator<PrefsOperators>();
                     prefsOperators.changeIntroState();
-                    Get.offAllNamed('/home');
+                    Get.offAllNamed('/bottonNavBar');
                   } else {
                     introController.pageController.nextPage(
                       duration: const Duration(milliseconds: 300),

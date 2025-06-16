@@ -52,7 +52,7 @@ class SplashController extends GetxController {
           if (shouldShowIntro) {
             Get.offAllNamed('/intro');
           } else {
-            Get.offAllNamed('/home');
+            Get.offAllNamed('/bottonNavBar');
           }
         }
       }

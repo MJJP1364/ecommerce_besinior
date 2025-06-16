@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FavoritScreen extends StatelessWidget {
+  const FavoritScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home'), centerTitle: true),
+      appBar: AppBar(title: const Text('Favorit'), centerTitle: true),
       body: Center(
         child: Text(
-          'Welcome to the Home Page',
+          'Favorit Page',
           style: Theme.of(context).textTheme.bodySmall,
         ),
       ),
