@@ -13,7 +13,7 @@ class BottomNVBScreen extends StatelessWidget {
     return Scaffold(
       body: Obx(() => controller.pages[controller.bottomNavCurrentIndex.value]),
       bottomNavigationBar: Container(
-        height: 90,
+        height: 70,
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),
