@@ -11,6 +11,7 @@ class BottomNVBScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     //  final size = MediaQuery.of(context).size;
     return Scaffold(
+        
       body: Obx(() => controller.pages[controller.bottomNavCurrentIndex.value]),
       bottomNavigationBar: Container(
         height: 70,
