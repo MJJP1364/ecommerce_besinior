@@ -24,6 +24,7 @@ void main() async {
   runApp(const MyApp());
 
   Get.put(SplashController(), permanent: true);
+  
 }
 
 class MyApp extends StatelessWidget {
