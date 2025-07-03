@@ -24,7 +24,6 @@ void main() async {
   runApp(const MyApp());
 
   Get.put(SplashController(), permanent: true);
-  
 }
 
 class MyApp extends StatelessWidget {
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
 
       //  localization
       locale: Locale('en', ''), // Default locale
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

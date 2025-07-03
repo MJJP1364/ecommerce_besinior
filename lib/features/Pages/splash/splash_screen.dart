@@ -28,35 +28,36 @@ class SplashScreen extends StatelessWidget {
                 animationDuration: Duration(milliseconds: 1000),
                 animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
 
-                child: Column(
-                  children: [
-                    SvgPicture.asset(
-                      'assets/images/splash_logo.svg',
-                      width: size.width * 0.8,
+                child: SvgPicture.asset(
+                  'assets/images/splash_logo.svg',
+                  width: size.width * 0.8,
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
+            Center(
+              child: DelayedWidget(
+                delayDuration: const Duration(milliseconds: 2000),
+                animationDuration: Duration(milliseconds: 1000),
+                animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
+
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 10,
+                    backgroundColor: Colors.red,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    const SizedBox(height: 30),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 10,
-                        backgroundColor: Colors.red,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onPressed: () {
-                        splashController.checkConnectivity1();
-                      },
-                      child: const Text(
-                        'ورود به برنامه',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
+                  onPressed: () {
+                    splashController.checkConnectivity1();
+                  },
+                  child: const Text(
+                    'ورود به برنامه',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
