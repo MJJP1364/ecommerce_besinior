@@ -1,6 +1,6 @@
 import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/bottom_nav_bar_view.dart';
 import 'package:ecommerce_besinior/core/dependences.dart';
-import 'package:ecommerce_besinior/features/Pages/Favorit/favorit_view.dart';
+import 'package:ecommerce_besinior/features/Pages/Category/category_view.dart';
 import 'package:ecommerce_besinior/features/Pages/Home/home_view.dart';
 import 'package:ecommerce_besinior/features/Pages/IntroPage/intro_view.dart';
 import 'package:ecommerce_besinior/features/Pages/Profile/profile_view.dart';
@@ -32,8 +32,8 @@ List<GetPage> routes = [
     transitionDuration: const Duration(milliseconds: 1000),
   ),
   GetPage(
-    name: '/favorit',
-    page: () => FavoritScreen(),
+    name: '/category',
+    page: () => CategoryScreen(),
     binding: AllBindings(),
     transition: Transition.fadeIn,
     transitionDuration: const Duration(milliseconds: 1000),

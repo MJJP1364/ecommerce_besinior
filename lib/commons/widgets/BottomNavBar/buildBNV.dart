@@ -13,7 +13,7 @@ class BuildNavItem extends StatelessWidget {
     super.key,
     required this.icon,
     required this.lable,
-    required this.index,
+    required this.index, required void Function() onTap,
     // this.onTap,
   });
   final BottomNVBcontroller controller = Get.find();
@@ -37,14 +37,10 @@ class BuildNavItem extends StatelessWidget {
                       : Colors.grey,
             ),
             const SizedBox(height: 3),
-            CircleAvatar(
-              radius: 3,
-              // ignore: unrelated_type_equality_checks
-              backgroundColor:
-                  controller.bottomNavCurrentIndex == index
+            Text(lable, style: TextStyle(
+              color: controller.bottomNavCurrentIndex == index
                       ? Colors.red
-                      : Colors.transparent,
-            ),
+                      : Colors.transparent,),)
           ],
         ),
       ),

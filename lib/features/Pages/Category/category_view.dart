@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class FavoritScreen extends StatelessWidget {
-  const FavoritScreen({super.key});
+class CategoryScreen extends StatelessWidget {
+  const CategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Favorit'), centerTitle: true),
+      appBar: AppBar(title: const Text('Category'), centerTitle: true),
       body: Center(
         child: Text(
-          'Favorit Page',
+          'Category Page',
           style: Theme.of(context).textTheme.bodySmall,
         ),
       ),
