@@ -1,5 +1,6 @@
+import 'package:delayed_widget/delayed_widget.dart';
+import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/bottom_nav_widget.dart';
 import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/bottom_nvb_controller.dart';
-import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/buildBNV.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +12,6 @@ class BottomNVBScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     //  final size = MediaQuery.of(context).size;
     return Scaffold(
-        
       body: Obx(() => controller.pages[controller.bottomNavCurrentIndex.value]),
       bottomNavigationBar: Container(
         height: 70,

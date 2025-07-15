@@ -22,10 +22,12 @@ class SplashController extends GetxController {
       // Mobile network is available
       connectivity.value = true;
       checkInternetConnection();
+      return;
     } else if (connectivityResult.contains(ConnectivityResult.wifi)) {
       // Wi-Fi is available
       connectivity.value = true;
       checkInternetConnection();
+      return;
     } else {
       // No available network types
       connectivity.value = false;
@@ -51,8 +53,10 @@ class SplashController extends GetxController {
           var shouldShowIntro = await prefsOperators.getIntroState();
           if (shouldShowIntro) {
             Get.offAllNamed('/intro');
+            return;
           } else {
             Get.offAllNamed('/bottonNavBar');
+            return;
           }
         }
       }

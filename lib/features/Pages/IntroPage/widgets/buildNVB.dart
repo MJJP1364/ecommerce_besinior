@@ -21,7 +21,7 @@ Widget BuildNavigationControls(Size size, IntroController introController) {
         children: [
           // Dot Indicator
           DelayedWidget(
-            delayDuration: const Duration(milliseconds: 500),
+            delayDuration: const Duration(milliseconds: 2000),
             animationDuration: const Duration(milliseconds: 1000),
             animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
             child: SmoothPageIndicator(
@@ -39,7 +39,7 @@ Widget BuildNavigationControls(Size size, IntroController introController) {
 
           // Next Button
           DelayedWidget(
-            delayDuration: const Duration(milliseconds: 500),
+            delayDuration: const Duration(milliseconds: 2500),
             animationDuration: const Duration(milliseconds: 1000),
             animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
             child: Obx(() {

@@ -30,7 +30,7 @@ class IntroPage extends StatelessWidget {
             height: size.height * 0.5,
             child: Center(
               child: DelayedWidget(
-                delayDuration: const Duration(milliseconds: 300),
+                delayDuration: const Duration(milliseconds: 500),
                 animationDuration: const Duration(milliseconds: 1000),
                 animation: DelayedAnimations.SLIDE_FROM_TOP,
 
@@ -50,7 +50,7 @@ class IntroPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 DelayedWidget(
-                  delayDuration: const Duration(milliseconds: 300),
+                  delayDuration: const Duration(milliseconds: 700),
                   animationDuration: const Duration(milliseconds: 1000),
                   animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
                   child: Padding(
@@ -60,7 +60,7 @@ class IntroPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 DelayedWidget(
-                  delayDuration: const Duration(milliseconds: 500),
+                  delayDuration: const Duration(milliseconds: 1000),
                   animationDuration: const Duration(milliseconds: 1000),
                   animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
                   child: Padding(
