@@ -1,6 +1,5 @@
-import 'package:delayed_widget/delayed_widget.dart';
-import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/bottom_nav_widget.dart';
 import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/bottom_nvb_controller.dart';
+import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/buildBNV.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,10 +20,30 @@ class BottomNVBScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              BuildNavItem(icon: Icons.home, lable: 'A', index: 0),
-              BuildNavItem(icon: Icons.favorite, lable: 'B', index: 1),
-              BuildNavItem(icon: Icons.shopping_cart, lable: 'C', index: 2),
-              BuildNavItem(icon: Icons.person_outline, lable: 'D', index: 3),
+              BuildNavItem(
+                icon: Icons.home,
+                lable: 'A',
+                index: 0,
+                onTap: () {},
+              ),
+              BuildNavItem(
+                icon: Icons.favorite,
+                lable: 'B',
+                index: 1,
+                onTap: () {},
+              ),
+              BuildNavItem(
+                icon: Icons.shopping_cart,
+                lable: 'C',
+                index: 2,
+                onTap: () {},
+              ),
+              BuildNavItem(
+                icon: Icons.person_outline,
+                lable: 'D',
+                index: 3,
+                onTap: () {},
+              ),
             ],
           ),
         ),
