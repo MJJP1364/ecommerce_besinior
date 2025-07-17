@@ -1,3 +1,4 @@
+import 'package:delayed_widget/delayed_widget.dart';
 import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/bottom_nvb_controller.dart';
 import 'package:ecommerce_besinior/commons/widgets/BottomNavBar/buildBNV.dart';
 import 'package:flutter/material.dart';
@@ -20,29 +21,49 @@ class BottomNVBScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              BuildNavItem(
-                icon: Icons.home,
-                lable: 'HOME',
-                index: 0,
-                onTap: () {},
+              DelayedWidget(
+                delayDuration: Duration(milliseconds: 500),
+                animationDuration: Duration(milliseconds: 500),
+                animation: DelayedAnimations.SLIDE_FROM_LEFT,
+                child: BuildNavItem(
+                  icon: Icons.home,
+                  lable: 'HOME',
+                  index: 0,
+                  onTap: () {},
+                ),
               ),
-              BuildNavItem(
-                icon: Icons.favorite,
-                lable: 'Favorit',
-                index: 1,
-                onTap: () {},
+              DelayedWidget(
+                delayDuration: Duration(milliseconds: 1000),
+                animationDuration: Duration(milliseconds: 500),
+                animation: DelayedAnimations.SLIDE_FROM_LEFT,
+                child: BuildNavItem(
+                  icon: Icons.category,
+                  lable: 'Category',
+                  index: 1,
+                  onTap: () {},
+                ),
               ),
-              BuildNavItem(
-                icon: Icons.shopping_cart,
-                lable: 'Shop',
-                index: 2,
-                onTap: () {},
+              DelayedWidget(
+                delayDuration: Duration(milliseconds: 1500),
+                animationDuration: Duration(milliseconds: 500),
+                animation: DelayedAnimations.SLIDE_FROM_LEFT,
+                child: BuildNavItem(
+                  icon: Icons.shopping_cart,
+                  lable: 'Shop',
+                  index: 2,
+                  onTap: () {},
+                ),
               ),
-              BuildNavItem(
-                icon: Icons.person_outline,
-                lable: 'Profile',
-                index: 3,
-                onTap: () {},
+              DelayedWidget(
+                delayDuration: Duration(milliseconds: 2000),
+                animationDuration: Duration(milliseconds: 500),
+                animation: DelayedAnimations.SLIDE_FROM_LEFT,
+                child: BuildNavItem(
+                  icon: Icons.person_outline,
+                  lable: 'Profile',
+                  index: 3,
+                  onTap: () {},
+                ),
               ),
             ],
           ),

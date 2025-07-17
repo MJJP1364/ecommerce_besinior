@@ -9,7 +9,7 @@ class BottomNVBcontroller extends GetxController {
   // final bottomNavCurrentIndex = RxInt(0);
   RxInt bottomNavCurrentIndex = 0.obs;
   final List<Widget> pages =
-      [const HomeScreen(), CategoryScreen(), ProfileScreen(), ShopScreen()].obs;
+      [const HomeScreen(), CategoryScreen(), ShopScreen(), ProfileScreen()].obs;
 }
 
 // class BottomNVBcontroller extends GetxController {
