@@ -22,25 +22,25 @@ class BottomNVBScreen extends StatelessWidget {
             children: [
               BuildNavItem(
                 icon: Icons.home,
-                lable: 'A',
+                lable: 'HOME',
                 index: 0,
                 onTap: () {},
               ),
               BuildNavItem(
                 icon: Icons.favorite,
-                lable: 'B',
+                lable: 'Favorit',
                 index: 1,
                 onTap: () {},
               ),
               BuildNavItem(
                 icon: Icons.shopping_cart,
-                lable: 'C',
+                lable: 'Shop',
                 index: 2,
                 onTap: () {},
               ),
               BuildNavItem(
                 icon: Icons.person_outline,
-                lable: 'D',
+                lable: 'Profile',
                 index: 3,
                 onTap: () {},
               ),
