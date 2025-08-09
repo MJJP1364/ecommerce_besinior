@@ -35,7 +35,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Eccomerce Besinior',
+
       initialBinding: AllBindings(),
+      
 
       // Theme settings
       themeMode: ThemeController().theme,
